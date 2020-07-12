@@ -91,7 +91,8 @@ To check this I've tweaked the examples in 3 ways:
     additions. So perhaps this is not too interesting...
 
     ```
-    ./timeit.sh Example2Ints 100000000 # I've bumped the size of the list otherwise
+    # I've bumped the size of the list otherwise it's juts too quick to tell anything.
+    ./timeit.sh Example2Ints 100000000 
 
     [1 of 1] Compiling Main             ( Example2Ints.hs, Example2Ints.o )
     Linking Example2Ints ...
