@@ -15,7 +15,7 @@ are 2 things changes compared to the first example:
 
 Since we are using Haskell's `Integer` type I suspect that the time is actually
 due to computing the large sum, adding larger Integers is more expensive than
-checking if they are even. 
+checking if they are even.
 
 To check this I've tweaked the examples in 3 ways (all included timings were
 taken with GHC 8.8.3):
@@ -88,14 +88,14 @@ taken with GHC 8.8.3):
 
 3. `Example2Ints` -- keep the summation, but swap in `Int` instead of
     `Integer`, this might overflow the Int but since we're not interested in
-    the actual number that seems fine? 
+    the actual number that seems fine?
 
     The time now seems to be dominated by traversing the list and doing many
     additions. So perhaps this is not too interesting...
 
     ```
-    # I've bumped the size of the list otherwise it's juts too quick to tell anything.
-    ./timeit.sh Example2Ints 100000000 
+    # I've bumped the size of the list otherwise it's just too quick to tell anything.
+    ./timeit.sh Example2Ints 100000000
 
     [1 of 1] Compiling Main             ( Example2Ints.hs, Example2Ints.o )
     Linking Example2Ints ...
