@@ -87,8 +87,8 @@ taken with GHC 8.8.3):
     ```
 
 3. `Example2Ints` -- keep the summation, but swap in `Int` instead of
-    `Integer`, this will overflow the Int many times over but since we're not
-    interested in the actual number that seems fine? 
+    `Integer`, this might overflow the Int but since we're not interested in
+    the actual number that seems fine? 
 
     The time now seems to be dominated by traversing the list and doing many
     additions. So perhaps this is not too interesting...
