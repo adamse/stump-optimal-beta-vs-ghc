@@ -17,7 +17,8 @@ Since we are using Haskell's `Integer` type I suspect that the time is actually
 due to computing the large sum, adding larger Integers is more expensive than
 checking if they are even. 
 
-To check this I've tweaked the examples in 3 ways:
+To check this I've tweaked the examples in 3 ways (all included timings were
+taken with GHC 8.8.3):
 
 1. `Example1Sum` -- the first example but summing instead of filtering even
     numbers. This exhibits a similar slower behaviour as example 2.
