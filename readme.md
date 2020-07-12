@@ -1,7 +1,6 @@
 # Un-optimal beta reduction in GHC?
 
-Some code and analysis from Aaron Stump's blog post ["Show me the (optimal)
-beta"][1].
+Some code and analysis from Aaron Stump's blog post ["Show me the (optimal) beta"][1].
 
 [1]: https://queuea9.wordpress.com/2020/07/10/show-me-the-optimal-beta/
 
@@ -22,6 +21,9 @@ To check this I've tweaked the examples in 3 ways:
 
 1. `Example1Sum` -- the first example but summing instead of filtering even
     numbers. This exhibits a similar slower behaviour as example 2.
+
+    This is some evidence that changing to use summation is the cause of the
+    time difference in example 2.
 
     ```
     ./timeit.sh Example1Sum
@@ -120,5 +122,5 @@ To check this I've tweaked the examples in 3 ways:
     ```
 
 I think it's hard to say anything conclusive without looking at the compiled
-code, or one of GHC's many intermediary languages, but it feels like some
-evidence to say that GHC is still behaving optimally?
+code, or one of GHC's many intermediary languages, but it's some evidence to
+say that GHC is still doing OK?
