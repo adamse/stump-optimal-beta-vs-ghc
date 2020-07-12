@@ -8,7 +8,7 @@ Some code and analysis from Aaron Stump's blog post ["Show me the (optimal) beta
 turning on optimisations in GHC (`-O2`) made the un-optimal behaviour go away.
 
 `Example2.hs` -- an updated example that may exhibit un-optimal behaviour. There
-are 2 things changes compared to the first example:
+are 2 changes compared to the first example:
 
 1. Uses a longer list
 2. Summing the list instead of filtering for even
