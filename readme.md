@@ -1,5 +1,8 @@
 # Un-optimal beta reduction in GHC?
 
+Update: added a fourth expirement which simply sums the big integer `n ^ m`
+replicated k times.
+
 Some code and analysis from Aaron Stump's blog post ["Show me the (optimal) beta"][1].
 
 [1]: https://queuea9.wordpress.com/2020/07/10/show-me-the-optimal-beta/
@@ -125,3 +128,37 @@ taken with GHC 8.8.3):
 I think it's hard to say anything conclusive without looking at the compiled
 code, or one of GHC's many intermediary languages, but it's some evidence to
 say that GHC is still doing OK?
+
+---
+
+A fourth experiment: This simply sums a list of length `k` of the result of `m ^ n`.
+It is clear that the second example is simply measuring the time taken
+for summation.
+
+```
+./timeit.sh Example2Const
+
+[1 of 1] Compiling Main             ( Example2Const.hs, Example2Const.o )
+Linking Example2Const ...
+
+time to compute just m ^ n
+odd
+
+real	0m0.013s
+user	0m0.012s
+sys	0m0.000s
+
+time to compute 1 ^ 1 many (100000) times
+even
+
+real	0m0.003s
+user	0m0.000s
+sys	0m0.003s
+
+time to compute m ^ n many (100000) times
+even
+
+real	0m1.632s
+user	0m1.627s
+sys	0m0.004s
+```
